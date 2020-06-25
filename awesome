@@ -1,0 +1,120 @@
+
+<marquee>hi how are you. i am so so so bored</marquee>
+<h2>
+hello when recording, if you want to see your face in the video , record your entire window and on the video viewer press the 3 dots and click picture in picture
+</h2>
+<body>
+
+<link rel="icon" href="https://docs.google.com/drawings/d/1spxeqhYM2vSelGFXzsWuDi_N89epyObue7BKKgDe6HQ/export/png" id="scammingdudes">
+<p1>
+this was made by coby kaufer and zalman engel
+</p1>
+<h3 id="scammingpeople1">
+Chello
+</h3>
+<style>
+#webcamrecordoutput {
+	float:right
+
+}
+#screenrecordoutput
+{float:right
+}
+.hiddenchroma{
+display:none
+}
+
+
+</style>
+<p><img src="https://docs.google.com/drawings/d/1spxeqhYM2vSelGFXzsWuDi_N89epyObue7BKKgDe6HQ/export/png"> 
+<!--<button id="startwebcamrecord">start webcam record</button>-->
+<video id="webcamrecordoutput" controls autoplay muted>
+</video>
+<button id="screenrecordingstart">start recording</button>
+<video id="screenrecordoutput"autoplay muted>
+</video>
+
+
+
+
+<button id="downloadbutton">stop and download your recording</button>
+
+
+<a id="actualdownload">
+
+</a>
+<script>
+console.log("h!!!i")
+screenrecordingstart.onclick=function() {
+
+
+	navigator.mediaDevices.getUserMedia(
+{
+video:true,audio:true
+}
+).then(function(webcamrecordinfo){
+	navigator.mediaDevices.getDisplayMedia(
+	{
+video:true
+}
+).then(function(screenrecorddata) {
+	webcamrecordoutput.srcObject=webcamrecordinfo
+	//webcamrecordoutput.requestPictureInPicture()
+	webcamrecordinfo.getAudioTracks().forEach(function(track){
+	screenrecorddata.addTrack(track)
+})
+	screenrecordoutput.srcObject=screenrecorddata
+	var actualstartrecordingscreen=new MediaRecorder(screenrecorddata)
+	actualstartrecordingscreen.start()
+downloadbutton.onclick=function(){
+actualstartrecordingscreen.stop()
+}
+	actualstartrecordingscreen.ondataavailable=function(info){
+	actualdownload.href=URL.createObjectURL(info.data)
+	actualdownload.download="zalmanisthebestest.mp4"
+	actualdownload.click()
+}
+})})
+}
+startwebcamrecord.onclick=function()
+{
+	navigator.mediaDevices.getUserMedia(
+{video:true,audio:true}
+
+).then(function(scammingmorepeople) {
+
+webcamrecordoutput.srcObject=scammingmorepeople
+	var iamscammingyou=new MediaRecorder(scammingmorepeople)
+downloadbutton.onclick=function(){
+iamscammingyou.stop()
+}
+iamscammingyou.start()
+iamscammingyou.ondataavailable=function(scam){
+actualdownload.href=
+URL.createObjectURL(scam.data)
+actualdownload.download="zalmanisthebest.mp4"
+actualdownload.click()
+
+
+}
+
+})
+
+
+}
+
+
+</script><div id="chroma"class="hiddenchroma">
+<input type=file id=p><br><button id="export_audio">export audio</button>,
+<video autoplay controls id=t></video>
+<script>
+	export_audio.onclick=function(){
+	mediaRecorder=new MediaRecorder
+}
+p.onchange = e => {
+	t.src = URL.createObjectURL(e.target.files[0]);
+	t.play();
+};
+</script>
+</div>
+
